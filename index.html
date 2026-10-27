@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111714">
+    <title>Soundroom</title>
+  <script type="module" crossorigin src="/assets/index-BNNUR7bx.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CXABDvkI.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="Main navigation">
+            <a class="brand" href="/" aria-label="Soundroom home"><span class="brand-mark">S</span><span>soundroom</span></a>
+            <p class="nav-label">YOUR SPACE</p>
+            <div class="nav-item active"><span class="nav-symbol">01</span> Your library</div>
+            <div class="sidebar-note"><span class="note-line"></span><p>Made for the music you already love.</p></div>
+            <div class="sidebar-footer">PERSONAL PLAYER <span>LOCAL AUDIO</span></div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar"><div class="eyebrow"><span class="live-dot"></span> YOUR LISTENING ROOM</div><div class="date-label">A LITTLE SPACE FOR SOUND</div></header>
+            <section class="library-heading">
+                <div><p class="overline">THE COLLECTION</p><h1>Your library<span class="heading-period">.</span></h1><p class="intro">A familiar place for your favorite tracks.</p></div>
+                <button id="chooseFiles" class="add-button" type="button"><span aria-hidden="true">+</span> Add music</button>
+                <input id="fileInput" class="visually-hidden" type="file" accept="audio/*" multiple>
+            </section>
+
+            <section class="library-section" aria-labelledby="playlistTitle">
+                <div class="section-heading"><div><p class="overline">ON THIS DEVICE</p><h2 id="playlistTitle">Your tracks</h2></div><span id="trackCount" class="track-count">0 tracks</span></div>
+                <div class="track-header"><span>NO.</span><span>TITLE</span><span></span></div>
+                <ol id="songList" class="song-list"></ol>
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-art" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+                    <p class="empty-title">Start with a song.</p>
+                    <p class="empty-copy">Choose audio files from your device to fill this room.</p>
+                    <button class="text-button" type="button" onclick="document.getElementById('chooseFiles').click()">Choose audio files <span aria-hidden="true">→</span></button>
+                </div>
+                <p id="status" class="status" role="status" aria-live="polite">Your audio stays on this device.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer class="player" aria-label="Audio player">
+        <div class="now-playing"><div id="coverLetter" class="cover-art">S</div><div class="now-copy"><span class="now-label">NOW PLAYING</span><span id="nowTitle" class="now-title">Choose a track</span></div></div>
+        <div class="transport"><div class="transport-buttons"><button id="previous" class="transport-button" type="button" aria-label="Previous track">Prev</button><button id="play" class="play-button" type="button" aria-label="Play or pause">Play</button><button id="next" class="transport-button" type="button" aria-label="Next track">Next</button></div><div class="timeline"><span id="currentTime">00:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Track position"><span id="duration">00:00</span></div></div>
+        <label class="volume-control"><span>VOL</span><input id="volume" type="range" min="0" max="1" step="0.01" value="0.75" aria-label="Volume"></label>
+    </footer>
+</body>
+</html>
